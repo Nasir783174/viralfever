@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Difference Between Viral Fever and Bacterial Infection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1a5276;
+      --blue-dark: #154360;
+      --blue-light: #aed6f1;
+      --teal: #117a65;
+      --cream: #f4f9fc;
+      --ink: #0d1b2a;
+      --ink-mid: #2c3e50;
+      --ink-light: #5d6d7e;
+      --border: #c8daea;
+      --accent: #e67e22;
+      --viral: #1a5276;
+      --bacterial: #117a65;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, #0e3952 60%, var(--teal) 100%);
+      color: #fff;
+      padding: 80px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,0.025) 40px,
+        rgba(255,255,255,0.025) 80px
+      );
+    }
+    .hero-tag {
+      display: inline-block;
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.9rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      max-width: 740px;
+      margin: 0 auto 24px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+    .hero-intro {
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      font-style: italic;
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 52px 0 12px; }
+
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ink-mid);
+      margin: 28px 0 10px;
+    }
+
+    p { color: var(--ink-mid); margin-bottom: 16px; }
+
+    ul, ol { padding-left: 22px; margin-bottom: 16px; color: var(--ink-mid); }
+    li { margin-bottom: 8px; }
+
+    /* INTRO */
+    .intro-block p { font-size: 1.05rem; }
+
+    /* TWO CONDITION CARDS */
+    .condition-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 24px 0;
+    }
+    @media (max-width: 560px) { .condition-grid { grid-template-columns: 1fr; } }
+
+    .condition-card {
+      background: #fff;
+      border-radius: 6px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .condition-card.viral { border-top: 5px solid var(--viral); }
+    .condition-card.bacterial { border-top: 5px solid var(--bacterial); }
+    .condition-card h3 {
+      margin-top: 0;
+      font-size: 1.05rem;
+    }
+    .condition-card.viral h3 { color: var(--viral); }
+    .condition-card.bacterial h3 { color: var(--bacterial); }
+    .condition-card ul { margin-bottom: 0; font-size: 0.92rem; }
+
+    /* COMPARISON TABLE */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      font-size: 0.93rem;
+    }
+    thead tr {
+      background: var(--blue-dark);
+      color: #fff;
+    }
+    thead th {
+      padding: 14px 16px;
+      text-align: left;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    thead th:nth-child(2) { background: var(--viral); }
+    thead th:nth-child(3) { background: var(--bacterial); }
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody td {
+      padding: 12px 16px;
+      color: var(--ink-mid);
+      vertical-align: top;
+    }
+    tbody td:first-child {
+      font-weight: 600;
+      color: var(--ink);
+      background: #f0f6fb;
+    }
+    tbody tr:nth-child(even) td:not(:first-child) { background: #f9fbfd; }
+
+    /* SYMPTOMS GRID */
+    .symptom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    @media (max-width: 540px) { .symptom-grid { grid-template-columns: 1fr; } }
+    .symptom-card {
+      background: #fff;
+      border-radius: 6px;
+      padding: 20px 22px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+    .symptom-card.viral { border-left: 5px solid var(--viral); }
+    .symptom-card.bacterial { border-left: 5px solid var(--bacterial); }
+    .symptom-card h3 { margin-top: 0; font-size: 1rem; }
+    .symptom-card.viral h3 { color: var(--viral); }
+    .symptom-card.bacterial h3 { color: var(--bacterial); }
+    .symptom-card ul { margin-bottom: 0; font-size: 0.9rem; }
+
+    /* INFO BOX */
+    .info-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--accent);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .info-box p { margin-bottom: 0; font-size: 0.96rem; }
+
+    /* ALERT BOX */
+    .alert-box {
+      background: var(--blue-dark);
+      color: #fff;
+      border-radius: 6px;
+      padding: 28px;
+      margin: 28px 0;
+    }
+    .alert-box h3 { color: #fff; margin-top: 0; letter-spacing: 0.3px; font-size: 1.05rem; }
+    .alert-box ul { color: rgba(255,255,255,0.88); margin-bottom: 0; }
+
+    /* TREATMENT GRID */
+    .treat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    @media (max-width: 540px) { .treat-grid { grid-template-columns: 1fr; } }
+    .treat-card {
+      background: #fff;
+      border-radius: 6px;
+      padding: 22px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+    .treat-card.viral { border-top: 4px solid var(--viral); }
+    .treat-card.bacterial { border-top: 4px solid var(--bacterial); }
+    .treat-card h3 { margin-top: 0; font-size: 1rem; }
+    .treat-card.viral h3 { color: var(--viral); }
+    .treat-card.bacterial h3 { color: var(--bacterial); }
+    .treat-card ul { margin-bottom: 0; font-size: 0.9rem; }
+
+    /* PREVENTION GRID */
+    .prev-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    @media (max-width: 540px) { .prev-grid { grid-template-columns: 1fr; } }
+    .prev-card {
+      background: #fff;
+      border-radius: 6px;
+      padding: 20px 22px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+    .prev-card.viral { border-bottom: 4px solid var(--viral); }
+    .prev-card.bacterial { border-bottom: 4px solid var(--bacterial); }
+    .prev-card h3 { margin-top: 0; font-size: 1rem; }
+    .prev-card.viral h3 { color: var(--viral); }
+    .prev-card.bacterial h3 { color: var(--bacterial); }
+    .prev-card ul { margin-bottom: 0; font-size: 0.9rem; }
+
+    /* FAQ */
+    .faq-list { list-style: none; padding: 0; }
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-q {
+      font-weight: 600;
+      color: var(--blue-dark);
+      padding: 16px 20px;
+      font-size: 0.97rem;
+      border-left: 4px solid var(--blue-dark);
+    }
+    .faq-a {
+      padding: 12px 20px 16px 24px;
+      font-size: 0.93rem;
+      color: var(--ink-light);
+      border-top: 1px solid var(--border);
+    }
+
+    /* HOME CARE */
+    .care-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    @media (max-width: 540px) { .care-grid { grid-template-columns: 1fr; } }
+    .care-card {
+      background: #fff;
+      border-radius: 6px;
+      padding: 20px 22px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border-left: 4px solid var(--border);
+    }
+    .care-card h3 { margin-top: 0; font-size: 1rem; color: var(--ink-mid); }
+    .care-card ul { margin-bottom: 0; font-size: 0.9rem; }
+
+    /* TWO-COL PLAIN */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 32px;
+    }
+    @media (max-width: 500px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* CONCLUSION */
+    .conclusion {
+      background: var(--ink);
+      color: #fff;
+      padding: 56px 24px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .conclusion h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      color: #fff;
+      border: none;
+      margin-bottom: 20px;
+    }
+    .conclusion p { color: rgba(255,255,255,0.8); max-width: 640px; margin: 0 auto 14px; }
+
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 18px;
+      font-size: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Medical Awareness</div>
+  <h1>Difference Between Viral Fever and Bacterial Infection</h1>
+  <p class="hero-intro">Many people get confused between viral fever and bacterial infection because both can cause fever, weakness, body pain, and tiredness. However, they are not the same. They have different causes, symptoms, and treatment methods.</p>
+</div>
+
+<!-- BODY -->
+<div class="container">
+
+  <!-- INTRO -->
+  <section class="intro-block">
+    <p>Understanding the difference is important because the wrong treatment may delay recovery or cause complications. For example, antibiotics may help some bacterial infections, but they do not work against viral illnesses.</p>
+    <p>In this article, you will learn the major differences between viral fever and bacterial infection, including symptoms, causes, diagnosis, and prevention. This information is educational and should not replace professional medical advice. Always consult a healthcare professional for proper diagnosis and treatment.</p>
+  </section>
+
+  <!-- WHAT IS VIRAL FEVER -->
+  <section>
+    <h2>What Is Viral Fever?</h2>
+    <p>A viral fever happens when a virus enters the body and causes an infection. The body reacts by increasing its temperature to fight the virus.</p>
+    <p>Viruses are tiny germs that spread from person to person through coughing, sneezing, touching infected surfaces, contaminated food, or close contact.</p>
+    <p>Common viral illnesses include:</p>
+    <ul>
+      <li>Common cold</li>
+      <li>Influenza (flu)</li>
+      <li>Dengue fever</li>
+      <li>COVID-19</li>
+      <li>Viral gastroenteritis</li>
+      <li>Chickenpox</li>
+    </ul>
+    <p>Most viral infections improve on their own with rest, fluids, and supportive care.</p>
+
+    <h3>Common Symptoms of Viral Fever</h3>
+    <p>Symptoms may vary depending on the virus, but common signs include:</p>
+    <div class="two-col">
+      <ul>
+        <li>Fever</li>
+        <li>Headache</li>
+        <li>Body aches</li>
+        <li>Muscle pain</li>
+        <li>Fatigue</li>
+      </ul>
+      <ul>
+        <li>Runny nose</li>
+        <li>Sore throat</li>
+        <li>Cough</li>
+        <li>Chills</li>
+        <li>Loss of appetite</li>
+      </ul>
+    </div>
+    <p>Some people may also experience nausea, diarrhea, or skin rash.</p>
+
+    <h3>How Viral Fever Spreads</h3>
+    <p>Viral infections can spread through:</p>
+    <ul>
+      <li>Air droplets from coughing or sneezing</li>
+      <li>Touching contaminated surfaces</li>
+      <li>Poor hand hygiene</li>
+      <li>Close contact with infected people</li>
+      <li>Mosquito bites in diseases like dengue</li>
+    </ul>
+    <p>Children, older adults, and people with weak immune systems may have a higher risk of severe viral infections.</p>
+  </section>
+
+  <!-- WHAT IS BACTERIAL INFECTION -->
+  <section>
+    <h2>What Is a Bacterial Infection?</h2>
+    <p>A bacterial infection happens when harmful bacteria enter the body and multiply. Bacteria are single-celled organisms. Some bacteria are harmless, but others can cause illness.</p>
+    <p>Bacterial infections can affect different parts of the body, including the lungs, skin, throat, urinary tract, and intestines.</p>
+    <p>Common bacterial infections include:</p>
+    <ul>
+      <li>Strep throat</li>
+      <li>Urinary tract infection (UTI)</li>
+      <li>Pneumonia</li>
+      <li>Tuberculosis</li>
+      <li>Bacterial food poisoning</li>
+      <li>Skin infections</li>
+    </ul>
+    <p>Unlike many viral illnesses, some bacterial infections may require antibiotics prescribed by a doctor.</p>
+
+    <h3>Common Symptoms of Bacterial Infection</h3>
+    <p>Symptoms depend on the type of infection, but common signs include:</p>
+    <div class="two-col">
+      <ul>
+        <li>Fever</li>
+        <li>Swelling</li>
+        <li>Redness</li>
+        <li>Pain in one area</li>
+        <li>Thick mucus or pus</li>
+      </ul>
+      <ul>
+        <li>Persistent cough</li>
+        <li>Burning during urination</li>
+        <li>Fatigue</li>
+        <li>Enlarged lymph nodes</li>
+      </ul>
+    </div>
+    <p>In some cases, bacterial infections can become serious if not treated properly.</p>
+  </section>
+
+  <!-- MAIN DIFFERENCE -->
+  <section>
+    <h2>Main Difference Between Viral Fever and Bacterial Infection</h2>
+    <p>Although both conditions may look similar at first, there are important differences.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Viral Fever</th>
+            <th>Bacterial Infection</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cause</td>
+            <td>Virus</td>
+            <td>Bacteria</td>
+          </tr>
+          <tr>
+            <td>Duration</td>
+            <td>Often short-term</td>
+            <td>May last longer without treatment</td>
+          </tr>
+          <tr>
+            <td>Antibiotics</td>
+            <td>Do not work</td>
+            <td>May help if prescribed</td>
+          </tr>
+          <tr>
+            <td>Spread</td>
+            <td>Very contagious in many cases</td>
+            <td>Some are contagious</td>
+          </tr>
+          <tr>
+            <td>Symptoms</td>
+            <td>Body aches, cough, runny nose</td>
+            <td>Localized pain, swelling, pus</td>
+          </tr>
+          <tr>
+            <td>Recovery</td>
+            <td>Often improves naturally</td>
+            <td>May require medical treatment</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>One major difference is that viral infections usually affect the whole body, while bacterial infections may affect one specific area.</p>
+    <p>For example:</p>
+    <ul>
+      <li>Viral fever may cause widespread body pain and weakness.</li>
+      <li>Bacterial infection may cause pain in a specific place like the throat, lungs, or urinary tract.</li>
+    </ul>
+  </section>
+
+  <!-- EARLY SYMPTOMS -->
+  <section>
+    <h2>Early Symptoms That May Help You Identify the Condition</h2>
+    <div class="symptom-grid">
+      <div class="symptom-card viral">
+        <h3>Early Signs of Viral Fever</h3>
+        <p style="font-size:0.9rem; color:var(--ink-light); margin-bottom:10px;">People with viral fever often notice:</p>
+        <ul>
+          <li>Mild to moderate fever</li>
+          <li>Tiredness</li>
+          <li>Body pain</li>
+          <li>Sneezing</li>
+          <li>Cough</li>
+          <li>Runny nose</li>
+          <li>Headache</li>
+        </ul>
+        <p style="font-size:0.88rem; color:var(--ink-light); margin-top:10px; margin-bottom:0;">Symptoms often appear gradually.</p>
+      </div>
+      <div class="symptom-card bacterial">
+        <h3>Early Signs of Bacterial Infection</h3>
+        <p style="font-size:0.9rem; color:var(--ink-light); margin-bottom:10px;">Bacterial infections may show symptoms like:</p>
+        <ul>
+          <li>High fever</li>
+          <li>Severe throat pain</li>
+          <li>Swollen tonsils</li>
+          <li>Ear pain</li>
+          <li>Pain while urinating</li>
+          <li>Thick yellow or green mucus</li>
+          <li>Skin redness or pus</li>
+        </ul>
+        <p style="font-size:0.88rem; color:var(--ink-light); margin-top:10px; margin-bottom:0;">Symptoms can become worse quickly if the infection spreads.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAUSES AND RISK -->
+  <section>
+    <h2>Causes and Risk Factors</h2>
+    <div class="condition-grid">
+      <div class="condition-card viral">
+        <h3>Causes of Viral Fever</h3>
+        <p style="font-size:0.9rem; color:var(--ink-light); margin-bottom:10px;">Viral fever develops when viruses enter the body through:</p>
+        <ul>
+          <li>Infected droplets in the air</li>
+          <li>Contaminated food or water</li>
+          <li>Insect bites</li>
+          <li>Physical contact with infected people</li>
+        </ul>
+        <h3 style="margin-top:16px;">Risk Factors for Viral Infection</h3>
+        <p style="font-size:0.9rem; color:var(--ink-light); margin-bottom:10px;">Certain factors increase the risk, including:</p>
+        <ul>
+          <li>Weak immune system</li>
+          <li>Poor sleep</li>
+          <li>Stress</li>
+          <li>Lack of vaccination</li>
+          <li>Crowded environments</li>
+          <li>Poor hygiene</li>
+        </ul>
+      </div>
+      <div class="condition-card bacterial">
+        <h3>Causes of Bacterial Infection</h3>
+        <p style="font-size:0.9rem; color:var(--ink-light); margin-bottom:10px;">Bacterial infections may occur due to:</p>
+        <ul>
+          <li>Contaminated food</li>
+          <li>Dirty water</li>
+          <li>Open wounds</li>
+          <li>Poor hygiene</li>
+          <li>Contact with infected people</li>
+        </ul>
+        <p style="font-size:0.88rem; color:var(--ink-light); margin-top:10px; margin-bottom:12px;">Some bacteria naturally live in the body but can cause infection when the immune system becomes weak.</p>
+        <h3>Risk Factors for Bacterial Infection</h3>
+        <ul>
+          <li>Diabetes</li>
+          <li>Smoking</li>
+          <li>Chronic illness</li>
+          <li>Poor wound care</li>
+          <li>Weak immunity</li>
+          <li>Long hospital stays</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIAGNOSIS -->
+  <section>
+    <h2>How Doctors Diagnose Viral Fever and Bacterial Infection</h2>
+    <p>Doctors usually begin with:</p>
+    <ul>
+      <li>Physical examination</li>
+      <li>Medical history</li>
+      <li>Symptom review</li>
+    </ul>
+    <p>They may also recommend tests such as:</p>
+    <ul>
+      <li>Blood tests</li>
+      <li>Urine tests</li>
+      <li>Throat swab</li>
+      <li>Chest X-ray</li>
+      <li>Culture tests</li>
+    </ul>
+    <p>These tests help identify whether the infection is caused by a virus or bacteria.</p>
+    <div class="info-box">
+      <p>Correct diagnosis is important because unnecessary antibiotic use can lead to <strong>antibiotic resistance</strong>, which makes bacteria harder to treat in the future.</p>
+    </div>
+  </section>
+
+  <!-- TREATMENT -->
+  <section>
+    <h2>Treatment Overview</h2>
+    <p>Treatment depends on whether the illness is caused by a virus or bacteria. Proper diagnosis is important because the treatments are different.</p>
+    <div class="treat-grid">
+      <div class="treat-card viral">
+        <h3>Treatment for Viral Fever</h3>
+        <p style="font-size:0.9rem; color:var(--ink-light); margin-bottom:10px;">Most viral fevers improve with supportive care. The body's immune system usually fights the virus naturally over time. Common supportive care methods include:</p>
+        <ul>
+          <li>Getting enough rest</li>
+          <li>Drinking plenty of fluids</li>
+          <li>Eating light and healthy foods</li>
+          <li>Managing fever with doctor-recommended medicine</li>
+          <li>Staying isolated when contagious</li>
+        </ul>
+        <p style="font-size:0.88rem; color:var(--ink-light); margin-top:10px; margin-bottom:0;">Doctors usually do not prescribe antibiotics for viral fever because antibiotics do not kill viruses. In some serious viral illnesses, antiviral medicines may be used under medical supervision.</p>
+      </div>
+      <div class="treat-card bacterial">
+        <h3>Treatment for Bacterial Infection</h3>
+        <p style="font-size:0.9rem; color:var(--ink-light); margin-bottom:10px;">Bacterial infections may need medical treatment depending on the severity and location of the infection. Doctors may recommend:</p>
+        <ul>
+          <li>Prescription antibiotics</li>
+          <li>Adequate hydration</li>
+          <li>Proper wound care</li>
+          <li>Rest and nutrition</li>
+          <li>Monitoring symptoms closely</li>
+        </ul>
+        <p style="font-size:0.88rem; color:var(--ink-light); margin-top:10px; margin-bottom:0;">It is important not to take antibiotics without medical advice. Incorrect or unnecessary antibiotic use can increase antibiotic resistance. Always complete the treatment plan exactly as advised by a healthcare professional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME CARE -->
+  <section>
+    <h2>Home Care Tips for Faster Recovery</h2>
+    <p>Whether the illness is viral or bacterial, supportive home care can help the body recover.</p>
+    <div class="care-grid">
+      <div class="care-card">
+        <h3>Helpful Recovery Tips</h3>
+        <ul>
+          <li>Drink clean water regularly</li>
+          <li>Sleep enough each night</li>
+          <li>Eat fruits, vegetables, and simple meals</li>
+          <li>Avoid smoking and alcohol</li>
+          <li>Wash hands frequently</li>
+          <li>Use clean towels and personal items</li>
+          <li>Stay home if sick to avoid spreading infection</li>
+        </ul>
+      </div>
+      <div class="care-card">
+        <h3>For Fever Management</h3>
+        <ul>
+          <li>Wear light clothing</li>
+          <li>Keep the room cool</li>
+          <li>Avoid dehydration</li>
+          <li>Monitor body temperature</li>
+        </ul>
+        <p style="font-size:0.88rem; color:var(--ink-light); margin-top:12px; margin-bottom:0;">Children, older adults, and people with chronic diseases may need closer monitoring during illness.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREVENTION -->
+  <section>
+    <h2>Prevention Methods</h2>
+    <p>Preventing infection is one of the best ways to stay healthy.</p>
+    <div class="prev-grid">
+      <div class="prev-card viral">
+        <h3>How to Prevent Viral Fever</h3>
+        <p style="font-size:0.9rem; color:var(--ink-light); margin-bottom:10px;">You can lower the risk by:</p>
+        <ul>
+          <li>Washing hands with soap regularly</li>
+          <li>Avoiding close contact with sick people</li>
+          <li>Covering coughs and sneezes</li>
+          <li>Taking recommended vaccines</li>
+          <li>Keeping surroundings clean</li>
+          <li>Using mosquito protection in areas with dengue risk</li>
+        </ul>
+        <p style="font-size:0.88rem; color:var(--ink-light); margin-top:10px; margin-bottom:0;">Vaccination plays an important role in reducing some viral diseases like influenza and COVID-19.</p>
+      </div>
+      <div class="prev-card bacterial">
+        <h3>How to Prevent Bacterial Infection</h3>
+        <p style="font-size:0.9rem; color:var(--ink-light); margin-bottom:10px;">Prevention methods include:</p>
+        <ul>
+          <li>Maintaining good hygiene</li>
+          <li>Cleaning cuts and wounds properly</li>
+          <li>Drinking safe water</li>
+          <li>Eating properly cooked food</li>
+          <li>Avoiding sharing personal items</li>
+          <li>Practicing safe food handling</li>
+        </ul>
+        <p style="font-size:0.88rem; color:var(--ink-light); margin-top:10px; margin-bottom:0;">Hospitals and clinics also follow infection-control methods to reduce bacterial spread.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLICATIONS -->
+  <section>
+    <h2>Possible Complications</h2>
+    <p>Both viral and bacterial infections can become serious if ignored.</p>
+    <div class="symptom-grid">
+      <div class="symptom-card viral">
+        <h3>Complications of Viral Fever</h3>
+        <p style="font-size:0.9rem; color:var(--ink-light); margin-bottom:10px;">In some cases, viral infections may lead to:</p>
+        <ul>
+          <li>Dehydration</li>
+          <li>Severe weakness</li>
+          <li>Breathing problems</li>
+          <li>Organ inflammation</li>
+          <li>Secondary infections</li>
+        </ul>
+        <p style="font-size:0.88rem; color:var(--ink-light); margin-top:10px; margin-bottom:0;">Certain viruses can be dangerous for infants, older adults, and people with weak immune systems.</p>
+      </div>
+      <div class="symptom-card bacterial">
+        <h3>Complications of Bacterial Infection</h3>
+        <p style="font-size:0.9rem; color:var(--ink-light); margin-bottom:10px;">Untreated bacterial infections may cause:</p>
+        <ul>
+          <li>Abscess formation</li>
+          <li>Pneumonia</li>
+          <li>Kidney infection</li>
+          <li>Bloodstream infection (sepsis)</li>
+          <li>Tissue damage</li>
+        </ul>
+        <p style="font-size:0.88rem; color:var(--ink-light); margin-top:10px; margin-bottom:0;">Severe bacterial infections may require emergency medical care.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN TO SEE A DOCTOR -->
+  <section>
+    <h2>When to See a Doctor</h2>
+    <p>Medical attention is important if symptoms become severe or do not improve.</p>
+    <div class="alert-box">
+      <h3>See a healthcare professional if you notice:</h3>
+      <ul>
+        <li>Fever lasting more than a few days</li>
+        <li>Difficulty breathing</li>
+        <li>Severe chest pain</li>
+        <li>Persistent vomiting</li>
+        <li>Confusion or dizziness</li>
+        <li>Severe dehydration</li>
+        <li>Very high fever</li>
+        <li>Skin rash with fever</li>
+        <li>Painful swelling</li>
+        <li>Blood in urine or stool</li>
+      </ul>
+    </div>
+    <p>Parents should seek medical help quickly if a child becomes unusually sleepy, has breathing difficulty, or refuses fluids.</p>
+    <p>Pregnant women, elderly individuals, and people with chronic illnesses should be extra careful with infections.</p>
+  </section>
+
+  <!-- CAN VIRAL TURN INTO BACTERIAL -->
+  <section>
+    <h2>Can Viral Fever Turn Into a Bacterial Infection?</h2>
+    <p>Sometimes, yes.</p>
+    <p>A person with a viral illness may develop a secondary bacterial infection because the immune system becomes weaker during the viral infection.</p>
+    <p>For example:</p>
+    <ul>
+      <li>A cold may later lead to bacterial sinus infection</li>
+      <li>Flu may increase the risk of bacterial pneumonia</li>
+    </ul>
+    <div class="info-box">
+      <p>This is why worsening symptoms should not be ignored.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <h2>Frequently Asked Questions</h2>
+    <ul class="faq-list">
+      <li class="faq-item">
+        <div class="faq-q">Is viral fever contagious?</div>
+        <div class="faq-a">Yes. Many viral illnesses spread easily through coughing, sneezing, or close contact.</div>
+      </li>
+      <li class="faq-item">
+        <div class="faq-q">Can antibiotics cure viral fever?</div>
+        <div class="faq-a">No. Antibiotics work against bacteria, not viruses.</div>
+      </li>
+      <li class="faq-item">
+        <div class="faq-q">Which infection causes higher fever?</div>
+        <div class="faq-a">Both viral and bacterial infections can cause high fever. Fever alone cannot confirm the exact cause.</div>
+      </li>
+      <li class="faq-item">
+        <div class="faq-q">How long does viral fever usually last?</div>
+        <div class="faq-a">Many viral fevers improve within a few days to one week, but recovery time may vary.</div>
+      </li>
+      <li class="faq-item">
+        <div class="faq-q">Can bacterial infections go away naturally?</div>
+        <div class="faq-a">Some mild bacterial infections may improve naturally, but others require medical treatment. A doctor can decide the safest option.</div>
+      </li>
+    </ul>
+  </section>
+
+</div><!-- end container -->
+
+<!-- CONCLUSION -->
+<div class="conclusion">
+  <div class="container">
+    <h2>Conclusion</h2>
+    <p>Viral fever and bacterial infection may share similar symptoms, but they are different conditions with different causes and treatments.</p>
+    <p>Viral fever is caused by viruses and often improves with rest, fluids, and supportive care. Bacterial infections are caused by bacteria and may sometimes require antibiotics prescribed by a healthcare professional.</p>
+    <p>Understanding the differences can help people seek proper care at the right time and avoid unnecessary treatments.</p>
+    <p><strong style="color:#fff; font-size:1.05rem;">If symptoms are severe, persistent, or worsening, it is always safest to consult a qualified healthcare provider for proper diagnosis and treatment.</strong></p>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Medical Awareness Blog &mdash; For informational purposes only. Always consult a qualified healthcare professional.
+</footer>
+
+</body>
+</html>
